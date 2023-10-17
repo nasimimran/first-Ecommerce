@@ -182,3 +182,29 @@ exports.updateProfile = catchAsyncError ( async (req, res, next) => {
         success: true
     });
 });
+
+// Get all the users --admin
+exports.getAllUser = catchAsyncError ( async (req, res, next) => {
+    const users = await User.find();
+
+    res.status(200).json({
+        success: true,
+        users
+    });
+}); 
+
+// Get single user --admin
+exports.getSingleUser = catchAsyncError ( async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+
+    if (!user) {
+        return next(
+            new ErrorHandler(`User dose not exist with Id: ${req.params.id}`,404)
+        );
+    }
+    
+    res.status(200).json({
+        success: true,
+        user
+    });
+}); 
