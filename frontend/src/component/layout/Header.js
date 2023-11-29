@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
+import {ReactNavbar} from "overlay-navbar";
 
 const Header = () => {
   return (
-    <div>
-      
-    </div>
+    <ReactNavbar />
   );
 }
 
