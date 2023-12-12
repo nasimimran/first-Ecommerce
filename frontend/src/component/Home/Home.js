@@ -5,22 +5,29 @@ import Product from "./Product.js";
 import MetaData from '../layout/MetaData.js';
 import { getProduct } from '../../actions/productActions.js';
 import { useSelector, useDispatch } from 'react-redux';
+import Loader from '../layout/Loader/Loader.js';
+import {useAlert} from "react-alert";
 
 
 const Home = () => {
+
+  const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, erroe, products, productCount } = useSelector(
+  const { loading, error, products, productCount } = useSelector(
     (state) => state.products
   );
 
   useEffect(() => {
+    if (error){
+      return alert.error(error);
+    }
     dispatch(getProduct());
-  }, [dispatch]);
+  }, [dispatch, error, alert]);
 
   return (
     <Fragment>
 
-      {loading ? "loading" : <Fragment>
+      {loading ? <Loader /> : <Fragment>
         <MetaData title={"Ecommerce"} />
         <div className="banner">
           <p>Welcome to Ecommerce</p>
