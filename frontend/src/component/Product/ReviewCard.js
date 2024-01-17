@@ -9,7 +9,7 @@ import Loader from '../layout/Loader/Loader.js';
 const ReviewCard = (props) => {
 
 
-  const {loading } = useSelector(
+  const { loading } = useSelector(
     (state) => state.productDetails
   );
 
