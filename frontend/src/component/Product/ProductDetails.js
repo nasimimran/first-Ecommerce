@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
-import { getProductDetails } from "../../actions/productActions";
+import { clearErrors, getProductDetails } from "../../actions/productActions";
 import { useAlert } from "react-alert";
 import ReactStars from 'react-rating-stars-component';
 import ReviewCard from "./ReviewCard.js";
@@ -23,7 +23,8 @@ const ProductDetails = () => {
 
     useEffect(() => {
         if (error) {
-            return alert.error(error);
+            alert.error(error);
+            dispatch(clearErrors());
         }
         dispatch(getProductDetails(id))
     }, [dispatch, id, error, alert]);
