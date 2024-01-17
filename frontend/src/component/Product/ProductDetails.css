@@ -163,7 +163,7 @@
     margin: auto;
     margin-bottom: 4vmax;
   }
-  .reviews {
+  .review {
     display: flex;
     overflow: auto;
   }
@@ -191,7 +191,7 @@
     font: 300 0.8vmax cursive;
   }
   
-  .noReviews {
+  .noReview {
     font: 400 1.3vmax "Gill Sans";
     text-align: center;
     color: rgba(0, 0, 0, 0.548);
