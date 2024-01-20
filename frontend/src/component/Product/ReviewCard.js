@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import ReactStars from 'react-rating-stars-component';
-import profilePng from "../../images/Profile.png";
+import profilePng from "../../images/profile.png";
 import "./ProductDetails.css";
 import { useSelector } from "react-redux";
 import Loader from '../layout/Loader/Loader.js';
