@@ -5,6 +5,7 @@ import {clearErrors, getProduct } from '../../actions/productActions.js';
 import { useSelector, useDispatch } from 'react-redux';
 import Loader from '../layout/Loader/Loader.js';
 import {useAlert} from "react-alert";
+import { useParams } from 'react-router-dom';
 
 const Products = () => {
 
@@ -13,14 +14,16 @@ const Products = () => {
     const { loading, error, products, productCount } = useSelector(
       (state) => state.products
     );
+
+    const { keyword } = useParams();
   
     useEffect(() => {
       if (error){
         alert.error(error);
         dispatch(clearErrors());
       }
-      dispatch(getProduct());
-    }, [dispatch, error, alert]);
+      dispatch(getProduct(keyword));
+    }, [dispatch, keyword, error, alert]);
 
   return (
     <Fragment>

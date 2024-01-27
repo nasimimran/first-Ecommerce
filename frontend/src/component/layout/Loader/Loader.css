@@ -2,6 +2,8 @@
     width: 100vw;
     height: 100vh;
     background-image: url("./loading.png");
+    background-repeat: no-repeat;
+    background-position: center;
     display: grid;
     place-items: center;
     max-width: 100%;
