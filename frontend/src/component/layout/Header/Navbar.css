@@ -12,6 +12,11 @@
     display: flex;
     align-items: center;
   }
+
+  .leftNavbar > h1 {
+    color: white;
+    text-shadow: 1px 1px 1px black, 0 0 25px orange, 0 0 5px darkorange;
+  }
   
   .midNavbar {
     width: 75%;
