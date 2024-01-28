@@ -1,9 +1,0 @@
- <div>
-        <Pagination
-          activePage={this.state.activePage}
-          itemsCountPerPage={1}
-          totalItemsCount={4}
-          pageRangeDisplayed={5}
-          onChange={this.handlePageChange.bind(this)}
-        />
-      </div>
